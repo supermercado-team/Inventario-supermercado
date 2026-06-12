@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventario Supermercado</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Inventario Supermercado</h1>
+    <p>Gestión de proveedores, inventario, alertas y pedidos.</p>
+  </header>
+
+  <nav class="tabs">
+    <button data-target="proveedores" class="active">Proveedores</button>
+    <button data-target="inventario">Inventario</button>
+    <button data-target="alertas">Alertas</button>
+    <button data-target="pedidos">Pedidos</button>
+  </nav>
+
+  <main>
+    <section id="proveedores" class="panel active">
+      <div class="panel-header">
+        <h2>Gestión de proveedores</h2>
+      </div>
+      <div class="form-grid">
+        <label>Nombre<input id="supplierName" type="text" placeholder="Nombre del proveedor" /></label>
+        <label>Contacto<input id="supplierContact" type="text" placeholder="Nombre de contacto" /></label>
+        <label>Teléfono<input id="supplierPhone" type="text" placeholder="Teléfono" /></label>
+        <label>Correo<input id="supplierEmail" type="email" placeholder="Correo electrónico" /></label>
+        <button id="saveSupplier">Registrar proveedor</button>
+      </div>
+
+      <div class="search-row">
+        <label>Buscar proveedor<input id="supplierSearch" type="search" placeholder="Buscar por nombre" /></label>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Contacto</th>
+              <th>Teléfono</th>
+              <th>Correo</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="supplierTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="inventario" class="panel">
+      <div class="panel-header">
+        <h2>Control de inventario</h2>
+      </div>
+      <div class="form-grid">
+        <label>Producto<input id="productName" type="text" placeholder="Nombre del producto" /></label>
+        <label>Stock inicial<input id="productStock" type="number" min="0" value="0" /></label>
+        <button id="addProduct">Registrar producto</button>
+      </div>
+
+      <div class="form-grid small-grid">
+        <label>Producto<select id="inventoryProduct"></select></label>
+        <label>Cantidad<input id="inventoryQuantity" type="number" min="1" value="1" /></label>
+        <label>Tipo
+          <select id="inventoryType">
+            <option value="entrada">Entrada</option>
+            <option value="salida">Salida</option>
+          </select>
+        </label>
+        <button id="registerMovement">Registrar movimiento</button>
+      </div>
+
+      <div class="form-grid small-grid">
+        <label>Actualizar stock<input id="updateStockQuantity" type="number" min="0" value="0" /></label>
+        <button id="updateStock">Actualizar stock</button>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Stock</th>
+              <th>Mínimo</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="productTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="alertas" class="panel">
+      <div class="panel-header">
+        <h2>Alertas de stock mínimo</h2>
+      </div>
+      <div class="form-grid small-grid">
+        <label>Stock mínimo global<input id="globalMinStock" type="number" min="0" value="5" /></label>
+        <button id="saveMinStock">Guardar mínimo</button>
+      </div>
+
+      <div class="alerts-summary">
+        <div><strong>Productos críticos:</strong> <span id="criticalCount">0</span></div>
+        <div><strong>Productos agotados:</strong> <span id="emptyCount">0</span></div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Stock</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="alertTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="pedidos" class="panel">
+      <div class="panel-header">
+        <h2>Gestión de pedidos</h2>
+      </div>
+      <div class="form-grid small-grid">
+        <label>Proveedor<select id="orderSupplier"></select></label>
+        <label>Producto<select id="orderProduct"></select></label>
+        <label>Cantidad<input id="orderQuantity" type="number" min="1" value="1" /></label>
+        <label>Estado<select id="orderStatus">
+          <option value="Pendiente">Pendiente</option>
+          <option value="Enviado">Enviado</option>
+          <option value="Recibido">Recibido</option>
+        </select></label>
+        <button id="addOrder">Crear pedido</button>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Proveedor</th>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Estado</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          <tbody id="orderTable"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto de inventario para supermercado - Issue #5, #6, #7, #8</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
