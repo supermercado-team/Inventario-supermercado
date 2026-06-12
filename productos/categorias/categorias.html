@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Categorías de Productos</title>
+    <link rel="stylesheet" href="categorias.css">
+</head>
+<body>
+
+<header>
+    <h1>Gestión de Categorías</h1>
+    <p>Crear, listar, editar y eliminar categorías de productos.</p>
+</header>
+
+<main class="contenedor">
+    <section class="tarjeta">
+        <h2>Registrar categoría</h2>
+
+        <form id="formCategoria">
+            <input type="text" id="nombreCategoria" placeholder="Nombre de la categoría" required>
+            <input type="text" id="descripcionCategoria" placeholder="Descripción">
+            <button type="submit">Guardar categoría</button>
+        </form>
+    </section>
+
+    <section class="tarjeta">
+        <h2>Listado de categorías</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaCategorias"></tbody>
+        </table>
+    </section>
+</main>
+
+<script src="categorias.js"></script>
+</body>
+</html>

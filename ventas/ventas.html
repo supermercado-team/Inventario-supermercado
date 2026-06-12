@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Ventas</title>
+    <link rel="stylesheet" href="ventas.css">
+</head>
+<body>
+
+    <header>
+        <h1>Sistema de Inventario - Ventas</h1>
+        <p>Registro de ventas, cálculo de totales y método de pago.</p>
+    </header>
+
+    <main class="contenedor">
+        <section class="tarjeta">
+            <h2>Registrar venta</h2>
+
+            <form id="formVenta">
+                <input type="text" id="producto" placeholder="Nombre del producto" required>
+                <input type="number" id="cantidad" placeholder="Cantidad" required>
+                <input type="number" id="precio" placeholder="Precio unitario" required>
+
+                <select id="metodoPago" required>
+                    <option value="">Seleccione método de pago</option>
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Transferencia">Transferencia</option>
+                    <option value="Tarjeta">Tarjeta</option>
+                </select>
+
+                <button type="submit">Registrar venta</button>
+            </form>
+        </section>
+
+        <section class="tarjeta">
+            <h2>Ventas registradas</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio unitario</th>
+                        <th>Subtotal</th>
+                        <th>Método de pago</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaVentas"></tbody>
+            </table>
+
+            <h3>Total vendido: $<span id="totalVentas">0</span></h3>
+        </section>
+    </main>
+
+    <script src="ventas.js"></script>
+</body>
+</html>

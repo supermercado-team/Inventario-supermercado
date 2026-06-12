@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reportes de Ventas</title>
+    <link rel="stylesheet" href="reportes.css">
+</head>
+<body>
+
+    <header>
+        <h1>Reportes de Ventas</h1>
+        <p>Consulta de ventas, ingresos y productos más vendidos.</p>
+    </header>
+
+    <main class="contenedor">
+        <section class="resumen">
+            <div class="card">
+                <h3>Ventas del día</h3>
+                <p id="ventasDia">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Total vendido</h3>
+                <p>$<span id="totalVendido">0</span></p>
+            </div>
+
+            <div class="card">
+                <h3>Producto más vendido</h3>
+                <p id="productoMasVendido">Sin datos</p>
+            </div>
+        </section>
+
+        <section class="tabla">
+            <h2>Detalle de ventas</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaReportes"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="reportes.js"></script>
+</body>
+</html>
